@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,15 +13,26 @@ namespace pryOttonelloPaloma_Gestionde
 {
     public partial class frmContactos : Form
     {
-        public frmContactos()
+
+        private string[] VecContactos;
+
+        private string[] VecTelefono;
+
+        public frmContactos( string[] Contactos, string[] Telefono)
         {
             InitializeComponent();
+            this.VecContactos = Contactos;
+            this.VecTelefono = Telefono;
         }
 
-        //D eclaración de Variables
+        //Declaración de Variables
 
+        
         string[] VecNombre = new string[3];
         int indice = 0;
+
+
+
         private void lblMostrar_Click(object sender, EventArgs e)
         {
             VecNombre[0] = "Matias";
@@ -28,12 +40,16 @@ namespace pryOttonelloPaloma_Gestionde
             VecNombre[2] = "Mateo";
 
             lblMostrar.Text = VecNombre[0];
+
+            //llamo al otro formulario
+
+            
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAtras_Click(object sender, EventArgs e)
         {
-            indice++;
-            lblMostrar.Text = VecNombre[indice];
+            
         }
 
         private void frmContactos_Load(object sender, EventArgs e)
@@ -41,9 +57,16 @@ namespace pryOttonelloPaloma_Gestionde
 
         }
 
-        private void btmSiguiente_Click(object sender, EventArgs e)
+        private void btnSiguiente_Click(object sender, EventArgs e)
         {
+            indice++;
+            lblMostrar.Text = VecNombre[indice];
+            indice++;
 
+            if (VecNombre.Length <= indice)
+            {
+
+            }
         }
     }
 }

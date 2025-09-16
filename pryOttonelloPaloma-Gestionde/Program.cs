@@ -16,7 +16,7 @@ namespace pryOttonelloPaloma_Gestionde
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGestiondeAgendas());
+            Application.Run(new frmContactos());
         }
     }
 }

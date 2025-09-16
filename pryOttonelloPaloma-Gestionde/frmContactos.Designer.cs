@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lblMostrar = new System.Windows.Forms.Label();
-            this.btmAtras = new System.Windows.Forms.Button();
-            this.btmSiguiente = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMostrar
@@ -46,33 +46,32 @@
             this.lblMostrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMostrar.Click += new System.EventHandler(this.lblMostrar_Click);
             // 
-            // btmAtras
+            // btnSiguiente
             // 
-            this.btmAtras.Location = new System.Drawing.Point(12, 283);
-            this.btmAtras.Name = "btmAtras";
-            this.btmAtras.Size = new System.Drawing.Size(261, 80);
-            this.btmAtras.TabIndex = 1;
-            this.btmAtras.Text = "Atrás";
-            this.btmAtras.UseVisualStyleBackColor = true;
-            this.btmAtras.Click += new System.EventHandler(this.button1_Click);
+            this.btnSiguiente.Location = new System.Drawing.Point(371, 283);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(261, 80);
+            this.btnSiguiente.TabIndex = 2;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // btmSiguiente
+            // btnAtras
             // 
-            this.btmSiguiente.Location = new System.Drawing.Point(371, 283);
-            this.btmSiguiente.Name = "btmSiguiente";
-            this.btmSiguiente.Size = new System.Drawing.Size(261, 80);
-            this.btmSiguiente.TabIndex = 2;
-            this.btmSiguiente.Text = "Siguiente";
-            this.btmSiguiente.UseVisualStyleBackColor = true;
-            this.btmSiguiente.Click += new System.EventHandler(this.btmSiguiente_Click);
+            this.btnAtras.Location = new System.Drawing.Point(41, 283);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(261, 80);
+            this.btnAtras.TabIndex = 3;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
             // 
             // frmContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btmSiguiente);
-            this.Controls.Add(this.btmAtras);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.lblMostrar);
             this.Name = "frmContactos";
             this.Text = "frmContactos";
@@ -84,7 +83,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblMostrar;
-        private System.Windows.Forms.Button btmAtras;
-        private System.Windows.Forms.Button btmSiguiente;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

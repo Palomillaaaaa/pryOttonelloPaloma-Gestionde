@@ -46,9 +46,19 @@ namespace pryOttonelloPaloma_Gestionde
         {
 
         }
-
+        //Variables Globales
         string vContacto = "";
         string vNumero = "";
+        
+
+        //Vectores Globales
+        public string[] VecTelefono = new string[5];
+        public string[] VecContacto = new string[5];
+
+        //Indice
+        int indice = 0;
+        DateTime vFecha = DateTime.Now;
+
         private void btmRegistrar_Click(object sender, EventArgs e)
         {
             vContacto = txtNombredelContacto.Text;
@@ -74,6 +84,11 @@ namespace pryOttonelloPaloma_Gestionde
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            frmContactos verContactos = new frmContactos(vContacto, vNumero);
         }
     }
 }
