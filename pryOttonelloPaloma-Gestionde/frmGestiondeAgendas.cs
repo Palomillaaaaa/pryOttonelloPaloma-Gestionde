@@ -18,15 +18,21 @@ namespace pryOttonelloPaloma_Gestionde
         }
 
         //Variables Globales
-        string vContacto = "";
-        string vNumero = "";
+        
         DateTime vFecha = DateTime.Now;
 
 
         //Vectores Globales
+
+        
         public string[] VecTelefono = new string[5];
         public string[] VecContacto = new string[5];
         public static string[] vecContactos = new string[5];
+
+        //static es que puede ser accedido sin la necesidad de crear una instancia de la clase. 
+        //Va a estar compartir la misma información. 
+        //Public lo pueden leer todos.
+
         int indice;
         int vContador = 0;
 
@@ -90,24 +96,34 @@ namespace pryOttonelloPaloma_Gestionde
             {
                 MessageBox.Show("Complete el campo");
             }
-            else
+            else if (vContador < 5)
             {
 
 
-                vContacto = txtNombredelContacto.Text;
-                vNumero = mtbNumerodeTelefono.Text;
+                string Contacto = txtNombredelContacto.Text;
+                string Telefono = mtbNumerodeTelefono.Text;
+                VecTelefono[vContador] = Telefono;
+                VecContacto[vContador] = Contacto;
+                vContador++;
+                //++ Recorre
+
+
                 //vFecha = dtpFecha.Value;
 
 
 
-                lstResultados.Items.Add("Contacto: " + vContacto
-                    + "Numero:"
-                    + vNumero + '\n');
+                lstResultados.Items.Add("Contacto: " + Contacto
+                    + "Número:"
+                    + Telefono + '\n');
                 //Borro los datos
                 txtNombredelContacto.Text = "";
                 mtbNumerodeTelefono.Text = "";
 
-                MessageBox.Show(vContacto + vNumero);
+                MessageBox.Show(Contacto + Telefono);
+            }
+            else
+            {
+                MessageBox.Show("Agenda llena");
             }
         }
 
@@ -132,6 +148,11 @@ namespace pryOttonelloPaloma_Gestionde
         private void btnVer_Click(object sender, EventArgs e)
         {
             frmContactos verContactos = new frmContactos(VecContacto, VecTelefono);
+        }
+
+        private void lstResultados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

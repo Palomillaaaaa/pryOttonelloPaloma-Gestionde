@@ -161,6 +161,7 @@
             this.lstResultados.Size = new System.Drawing.Size(424, 167);
             this.lstResultados.TabIndex = 2;
             this.lstResultados.UseCompatibleStateImageBehavior = false;
+            this.lstResultados.SelectedIndexChanged += new System.EventHandler(this.lstResultados_SelectedIndexChanged);
             // 
             // lblContactos
             // 
