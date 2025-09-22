@@ -20,6 +20,7 @@ namespace pryOttonelloPaloma_Gestionde
         //Variables Globales
         
         DateTime vFecha = DateTime.Now;
+        public static string[] VecVerContactos = new string[5];
 
 
         //Vectores Globales
@@ -102,11 +103,12 @@ namespace pryOttonelloPaloma_Gestionde
 
                 string Contacto = txtNombredelContacto.Text;
                 string Telefono = mtbNumerodeTelefono.Text;
-                VecTelefono[vContador] = Telefono;
-                VecContacto[vContador] = Contacto;
-                vContador++;
+                //frmGestiondeAgendas.VecVerContactos[vContador] = Telefono +Contacto;
+                //aca paso que tenian el mismo dato y se sobreponian el mismo datos.
                 //++ Recorre
 
+                VecVerContactos[vContador] = (Telefono + Contacto);
+                vContador++;
 
                 //vFecha = dtpFecha.Value;
 
@@ -147,7 +149,8 @@ namespace pryOttonelloPaloma_Gestionde
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            frmContactos verContactos = new frmContactos(VecContacto, VecTelefono);
+            frmContactos verContactos = new frmContactos();
+            verContactos.PasarDatos = VecVerContactos;
             verContactos.ShowDialog();
         }
 

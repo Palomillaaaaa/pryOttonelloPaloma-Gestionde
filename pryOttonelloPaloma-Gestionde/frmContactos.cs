@@ -16,19 +16,22 @@ namespace pryOttonelloPaloma_Gestionde
        
      
 
-        public frmContactos( string[] Contactos, string[] Telefono)
+        public frmContactos()
         {
            InitializeComponent();
         }
 
+
+        public string[] PasarDatos;
         int indice= 0;
-        public string []VecContacto = new string[5]; 
+       
 
         private void lblMostrar_Click(object sender, EventArgs e)
         {
            
 
             //llamo al otro formulario
+            //lblMostrar.Text = frmGestiondeAgendas.VecVerContactos[indice];
 
             
 
@@ -36,11 +39,7 @@ namespace pryOttonelloPaloma_Gestionde
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            indice--;
-            if (indice < 0)
-            {
-                lblMostrar.Text = VecContacto[indice];
-            }
+           
             
         }
 
@@ -51,16 +50,38 @@ namespace pryOttonelloPaloma_Gestionde
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            indice++;
+            
             if (indice <5)
             {
-                lblMostrar.Text = VecContacto[indice];
+                btnAtras.Enabled = true;
+                lblMostrar.Text = PasarDatos[indice];
+                indice++;
             }
+            else
+            {
+                btnSiguiente.Enabled=false;
+                indice--;
+            }
+            
+            
         }
 
         private void btnAtras_Click_1(object sender, EventArgs e)
         {
-           
+            
+
+            if (indice >= 0)
+            {
+                btnSiguiente.Enabled = true;
+
+                lblMostrar.Text = PasarDatos[indice];
+                indice--;
+            }
+            else
+            {
+                btnAtras.Enabled = false;
+                indice++;
+            }
         }
     }
 }

@@ -38,10 +38,9 @@
             this.lblMostrar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblMostrar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostrar.Location = new System.Drawing.Point(173, 44);
-            this.lblMostrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMostrar.Location = new System.Drawing.Point(115, 29);
             this.lblMostrar.Name = "lblMostrar";
-            this.lblMostrar.Size = new System.Drawing.Size(758, 270);
+            this.lblMostrar.Size = new System.Drawing.Size(505, 176);
             this.lblMostrar.TabIndex = 0;
             this.lblMostrar.Text = "-";
             this.lblMostrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -49,10 +48,9 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(611, 335);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSiguiente.Location = new System.Drawing.Point(407, 218);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(304, 110);
+            this.btnSiguiente.Size = new System.Drawing.Size(203, 72);
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -60,10 +58,9 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(173, 335);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAtras.Location = new System.Drawing.Point(128, 218);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(304, 110);
+            this.btnAtras.Size = new System.Drawing.Size(203, 72);
             this.btnAtras.TabIndex = 3;
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -71,13 +68,12 @@
             // 
             // frmContactos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.lblMostrar);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmContactos";
             this.Text = "frmContactos";
             this.Load += new System.EventHandler(this.frmContactos_Load);
