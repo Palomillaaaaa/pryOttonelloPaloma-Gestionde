@@ -17,6 +17,22 @@ namespace pryOttonelloPaloma_Gestionde
             InitializeComponent();
         }
 
+        //Variables Globales
+        string vContacto = "";
+        string vNumero = "";
+        DateTime vFecha = DateTime.Now;
+
+
+        //Vectores Globales
+        public string[] VecTelefono = new string[5];
+        public string[] VecContacto = new string[5];
+        public static string[] vecContactos = new string[5];
+        int indice;
+        int vContador = 0;
+
+        
+        
+        
         private void grbGestion_Enter(object sender, EventArgs e)
         {
 
@@ -34,7 +50,14 @@ namespace pryOttonelloPaloma_Gestionde
 
         private void txtNumerodeTelefono_TextChanged(object sender, EventArgs e)
         {
-
+            if (mtbNumerodeTelefono.MaskFull) 
+            {
+                btnRegistrar.Enabled = true;
+            }
+            else
+            {
+                btnRegistrar.Enabled=false;
+            }
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
@@ -42,34 +65,52 @@ namespace pryOttonelloPaloma_Gestionde
             
         }
 
+        // += le agregamos algo a la variable que está ahi
+
         private void txtNombredelContacto_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtNombredelContacto.Text == "")
+            {
+                btnRegistrar.Enabled = false;
+            }
+            else
+            {
+                btnRegistrar.Enabled = true;
+            }
         }
-        //Variables Globales
-        string vContacto = "";
-        string vNumero = "";
-        
 
-        //Vectores Globales
-        public string[] VecTelefono = new string[5];
-        public string[] VecContacto = new string[5];
-
-        //Indice
-        int indice = 0;
-        DateTime vFecha = DateTime.Now;
-
-        private void btmRegistrar_Click(object sender, EventArgs e)
+        //! es una negación, es decir, esta haciendo la misma operación que == false
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            vContacto = txtNombredelContacto.Text;
-            vNumero = mtbNumerodeTelefono.Text;
+            if (txtNombredelContacto.Text == "")
+            {
+                MessageBox.Show("Complete el campo Contacto");
+            }
+            else if (!mtbNumerodeTelefono.MaskFull)
+            {
+                MessageBox.Show("Complete el campo");
+            }
+            else
+            {
 
-            lstResultados.Items.Add("Contacto: " + vContacto + "Numero:"
-                + vNumero + '\n');
-            //Borro los datos
-            txtNombredelContacto.Text = "";
-            mtbNumerodeTelefono.Text = "";
+
+                vContacto = txtNombredelContacto.Text;
+                vNumero = mtbNumerodeTelefono.Text;
+                //vFecha = dtpFecha.Value;
+
+
+
+                lstResultados.Items.Add("Contacto: " + vContacto
+                    + "Numero:"
+                    + vNumero + '\n');
+                //Borro los datos
+                txtNombredelContacto.Text = "";
+                mtbNumerodeTelefono.Text = "";
+
+                MessageBox.Show(vContacto + vNumero);
+            }
         }
+
 
         private void mtbNumerodeTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -78,7 +119,9 @@ namespace pryOttonelloPaloma_Gestionde
 
         private void btmBorrar_Click(object sender, EventArgs e)
         {
-            lstResultados.Items.Add("");
+            txtNombredelContacto.Text = "";
+            mtbNumerodeTelefono.Text = "";
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -88,7 +131,7 @@ namespace pryOttonelloPaloma_Gestionde
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            frmContactos verContactos = new frmContactos(vContacto, vNumero);
+            frmContactos verContactos = new frmContactos(VecContacto, VecTelefono);
         }
     }
 }

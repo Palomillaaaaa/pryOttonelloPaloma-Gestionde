@@ -34,15 +34,16 @@
             this.lblNumero = new System.Windows.Forms.Label();
             this.txtNombredelContacto = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btmRegistrar = new System.Windows.Forms.Button();
-            this.btmBorrar = new System.Windows.Forms.Button();
+            this.lblContacto = new System.Windows.Forms.Label();
+            this.lblAgenda = new System.Windows.Forms.Label();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.lstResultados = new System.Windows.Forms.ListView();
             this.lblContactos = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.btnVer = new System.Windows.Forms.Button();
+            this.gpbRegistroContacto = new System.Windows.Forms.GroupBox();
             this.grbGestion.SuspendLayout();
+            this.gpbRegistroContacto.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbGestion
@@ -51,11 +52,13 @@
             this.grbGestion.Controls.Add(this.lblNumero);
             this.grbGestion.Controls.Add(this.txtNombredelContacto);
             this.grbGestion.Controls.Add(this.dtpFecha);
-            this.grbGestion.Controls.Add(this.label2);
-            this.grbGestion.Controls.Add(this.label1);
-            this.grbGestion.Location = new System.Drawing.Point(67, 42);
+            this.grbGestion.Controls.Add(this.lblContacto);
+            this.grbGestion.Controls.Add(this.lblAgenda);
+            this.grbGestion.Location = new System.Drawing.Point(100, 65);
+            this.grbGestion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grbGestion.Name = "grbGestion";
-            this.grbGestion.Size = new System.Drawing.Size(313, 208);
+            this.grbGestion.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grbGestion.Size = new System.Drawing.Size(470, 320);
             this.grbGestion.TabIndex = 4;
             this.grbGestion.TabStop = false;
             this.grbGestion.Text = "Gestión de Agenda";
@@ -63,19 +66,22 @@
             // 
             // mtbNumerodeTelefono
             // 
-            this.mtbNumerodeTelefono.Location = new System.Drawing.Point(20, 138);
-            this.mtbNumerodeTelefono.Mask = "000-000-0000";
+            this.mtbNumerodeTelefono.Location = new System.Drawing.Point(30, 212);
+            this.mtbNumerodeTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mtbNumerodeTelefono.Mask = "(999)000-0000";
             this.mtbNumerodeTelefono.Name = "mtbNumerodeTelefono";
-            this.mtbNumerodeTelefono.Size = new System.Drawing.Size(226, 20);
+            this.mtbNumerodeTelefono.Size = new System.Drawing.Size(337, 26);
             this.mtbNumerodeTelefono.TabIndex = 4;
             this.mtbNumerodeTelefono.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbNumerodeTelefono_MaskInputRejected);
+            this.mtbNumerodeTelefono.TextChanged += new System.EventHandler(this.txtNumerodeTelefono_TextChanged);
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(17, 122);
+            this.lblNumero.Location = new System.Drawing.Point(26, 188);
+            this.lblNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(104, 13);
+            this.lblNumero.Size = new System.Drawing.Size(153, 20);
             this.lblNumero.TabIndex = 3;
             this.lblNumero.Text = "Número de Teléfono";
             this.lblNumero.Click += new System.EventHandler(this.lblNumero_Click);
@@ -85,134 +91,146 @@
             this.txtNombredelContacto.BackColor = System.Drawing.SystemColors.Window;
             this.txtNombredelContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombredelContacto.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtNombredelContacto.Location = new System.Drawing.Point(20, 86);
+            this.txtNombredelContacto.Location = new System.Drawing.Point(30, 132);
+            this.txtNombredelContacto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombredelContacto.MaxLength = 20;
             this.txtNombredelContacto.Name = "txtNombredelContacto";
-            this.txtNombredelContacto.Size = new System.Drawing.Size(226, 20);
+            this.txtNombredelContacto.Size = new System.Drawing.Size(337, 26);
             this.txtNombredelContacto.TabIndex = 3;
             this.txtNombredelContacto.TextChanged += new System.EventHandler(this.txtNombredelContacto_TextChanged);
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(76, 30);
+            this.dtpFecha.Location = new System.Drawing.Point(114, 46);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(298, 26);
             this.dtpFecha.TabIndex = 2;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
-            // label2
+            // lblContacto
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Contacto";
+            this.lblContacto.AutoSize = true;
+            this.lblContacto.Location = new System.Drawing.Point(26, 108);
+            this.lblContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContacto.Name = "lblContacto";
+            this.lblContacto.Size = new System.Drawing.Size(74, 20);
+            this.lblContacto.TabIndex = 2;
+            this.lblContacto.Text = "Contacto";
             // 
-            // label1
+            // lblAgenda
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Agenda";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblAgenda.AutoSize = true;
+            this.lblAgenda.Location = new System.Drawing.Point(26, 49);
+            this.lblAgenda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgenda.Name = "lblAgenda";
+            this.lblAgenda.Size = new System.Drawing.Size(65, 20);
+            this.lblAgenda.TabIndex = 1;
+            this.lblAgenda.Text = "Agenda";
+            this.lblAgenda.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btmRegistrar
+            // btnRegistrar
             // 
-            this.btmRegistrar.Location = new System.Drawing.Point(301, 256);
-            this.btmRegistrar.Name = "btmRegistrar";
-            this.btmRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btmRegistrar.TabIndex = 1;
-            this.btmRegistrar.Text = "Registrar";
-            this.btmRegistrar.UseVisualStyleBackColor = true;
-            this.btmRegistrar.Click += new System.EventHandler(this.btmRegistrar_Click);
+            this.btnRegistrar.Location = new System.Drawing.Point(452, 394);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(112, 35);
+            this.btnRegistrar.TabIndex = 1;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // btmBorrar
+            // btnBorrar
             // 
-            this.btmBorrar.Location = new System.Drawing.Point(220, 256);
-            this.btmBorrar.Name = "btmBorrar";
-            this.btmBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btmBorrar.TabIndex = 3;
-            this.btmBorrar.Text = "Borrar";
-            this.btmBorrar.UseVisualStyleBackColor = true;
-            this.btmBorrar.Click += new System.EventHandler(this.btmBorrar_Click);
+            this.btnBorrar.Location = new System.Drawing.Point(330, 394);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(112, 35);
+            this.btnBorrar.TabIndex = 3;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btmBorrar_Click);
             // 
             // lstResultados
             // 
+            this.lstResultados.BackColor = System.Drawing.SystemColors.Menu;
             this.lstResultados.HideSelection = false;
-            this.lstResultados.Location = new System.Drawing.Point(67, 285);
+            this.lstResultados.Location = new System.Drawing.Point(20, 27);
+            this.lstResultados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstResultados.Name = "lstResultados";
-            this.lstResultados.Size = new System.Drawing.Size(309, 97);
+            this.lstResultados.Size = new System.Drawing.Size(424, 167);
             this.lstResultados.TabIndex = 2;
             this.lstResultados.UseCompatibleStateImageBehavior = false;
             // 
             // lblContactos
             // 
             this.lblContactos.AutoSize = true;
-            this.lblContactos.Location = new System.Drawing.Point(64, 397);
+            this.lblContactos.Location = new System.Drawing.Point(16, 219);
+            this.lblContactos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContactos.Name = "lblContactos";
-            this.lblContactos.Size = new System.Drawing.Size(121, 13);
+            this.lblContactos.Size = new System.Drawing.Size(182, 20);
             this.lblContactos.TabIndex = 5;
             this.lblContactos.Text = "Cantidad de Contadores";
             this.lblContactos.Click += new System.EventHandler(this.label3_Click);
             // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(298, 397);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(71, 13);
-            this.lblFecha.TabIndex = 6;
-            this.lblFecha.Text = "Fecha y Hora";
-            // 
             // btnVer
             // 
-            this.btnVer.Location = new System.Drawing.Point(314, 433);
+            this.btnVer.Location = new System.Drawing.Point(332, 233);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(75, 23);
+            this.btnVer.Size = new System.Drawing.Size(112, 35);
             this.btnVer.TabIndex = 7;
             this.btnVer.Text = "Ver Contactos";
             this.btnVer.UseVisualStyleBackColor = true;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
+            // gpbRegistroContacto
+            // 
+            this.gpbRegistroContacto.Controls.Add(this.lstResultados);
+            this.gpbRegistroContacto.Controls.Add(this.btnVer);
+            this.gpbRegistroContacto.Controls.Add(this.lblContactos);
+            this.gpbRegistroContacto.Location = new System.Drawing.Point(100, 453);
+            this.gpbRegistroContacto.Name = "gpbRegistroContacto";
+            this.gpbRegistroContacto.Size = new System.Drawing.Size(470, 291);
+            this.gpbRegistroContacto.TabIndex = 8;
+            this.gpbRegistroContacto.TabStop = false;
+            this.gpbRegistroContacto.Text = "Registros";
+            // 
             // frmGestiondeAgendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 493);
-            this.Controls.Add(this.btnVer);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.lblContactos);
-            this.Controls.Add(this.lstResultados);
-            this.Controls.Add(this.btmBorrar);
-            this.Controls.Add(this.btmRegistrar);
+            this.ClientSize = new System.Drawing.Size(1118, 904);
+            this.Controls.Add(this.gpbRegistroContacto);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.grbGestion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGestiondeAgendas";
             this.Text = "frmGestiondeAgendas";
             this.grbGestion.ResumeLayout(false);
             this.grbGestion.PerformLayout();
+            this.gpbRegistroContacto.ResumeLayout(false);
+            this.gpbRegistroContacto.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox grbGestion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAgenda;
         private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btmRegistrar;
-        private System.Windows.Forms.Button btmBorrar;
+        private System.Windows.Forms.Label lblContacto;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.MaskedTextBox mtbNumerodeTelefono;
         private System.Windows.Forms.TextBox txtNombredelContacto;
         private System.Windows.Forms.ListView lstResultados;
         private System.Windows.Forms.Label lblContactos;
-        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.GroupBox gpbRegistroContacto;
     }
 }
