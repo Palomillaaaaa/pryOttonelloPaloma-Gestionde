@@ -148,6 +148,7 @@ namespace pryOttonelloPaloma_Gestionde
         private void btnVer_Click(object sender, EventArgs e)
         {
             frmContactos verContactos = new frmContactos(VecContacto, VecTelefono);
+            verContactos.ShowDialog();
         }
 
         private void lstResultados_SelectedIndexChanged(object sender, EventArgs e)
